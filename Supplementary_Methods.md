@@ -6,6 +6,8 @@ All analyses were run with Python 3 and the scripts in `reproducibility/scripts/
 
 ## Primary cohort preprocessing
 
+The source study's modified International Working Group response definition was retained exactly: complete response, platelet count >100 × 10^9/L with no bleeding; response, platelet count 30–100 × 10^9/L with at least a two-fold increase from baseline and no bleeding; and nonresponse, platelet count <30 × 10^9/L, failure to double baseline within 90 days, or bleeding. Response labels were not re-estimated from transcriptomic data.
+
 GSE112278 3'-end RNA-sequencing counts were converted to log2 counts per million after a 0.5 pseudocount and library-size normalization. The platelet score was the mean of gene-wise standardized expression for PPBP, PF4, GP1BA, GP9, ITGA2B, ITGB3, TUBB1, TREML1, RGS18, SDPR/CAVIN2, SPARC, and CLU. This score is an RNA-abundance proxy and was not calibrated to platelet counts.
 
 ## Exact tests and resampling
