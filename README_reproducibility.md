@@ -20,7 +20,7 @@ GSE112278, GSE302674, GSE262073, GSE186294, GSE112594, GSE107011, GSE126448, GSE
 
 ## Release status
 
-This is a Zenodo/GitHub-ready release. Before submission, publish the `reproducibility/` directory and result tables to a public repository and replace the manuscript data-sharing placeholder with the permanent URL and version/DOI.
+The public code repository is https://github.com/Salvation-Zhang/TISTA_Blood_Advances_reproducibility, release version `v1.0.0`. Zenodo DOI archival is pending activation of the repository in the author's Zenodo account.
 
 ## Scope
 
