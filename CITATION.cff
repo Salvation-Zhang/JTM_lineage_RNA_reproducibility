@@ -10,4 +10,9 @@ authors:
   - family-names: Peng
     given-names: Jun
 repository-code: "https://github.com/Salvation-Zhang/TISTA_Blood_Advances_reproducibility"
+doi: "10.5281/zenodo.21557318"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21557318"
+    description: "Version 1.0.0 archive"
 license: MIT

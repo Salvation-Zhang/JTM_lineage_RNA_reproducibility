@@ -2,7 +2,7 @@
 
 ## Reproducibility and software
 
-All analyses were run with Python 3 and the scripts in `reproducibility/scripts/`. Random procedures used fixed seeds recorded in the scripts. Source expression matrices and gene-annotation files were not redistributed in this release when they were downloaded directly from GEO or NCBI; accession numbers and retrieval metadata are listed in `README_reproducibility.md`.
+All analyses were run with Python 3 and the scripts in the public repository at https://github.com/Salvation-Zhang/TISTA_Blood_Advances_reproducibility (version v1.0.0; Zenodo doi:10.5281/zenodo.21557318). Random procedures used fixed seeds recorded in the scripts. Source expression matrices and gene-annotation files were not redistributed in this release when they were downloaded directly from GEO or NCBI; accession numbers and retrieval metadata are listed in `README_reproducibility.md`.
 
 ## Primary cohort preprocessing
 

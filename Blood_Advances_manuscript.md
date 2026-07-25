@@ -172,7 +172,7 @@ In conclusion, platelet-associated RNA dominated the selected responder-associat
 
 ## Data sharing statement
 
-All source datasets are publicly available through the Gene Expression Omnibus under accessions GSE112278, GSE302674, GSE262073, GSE186294, GSE112594, GSE107011, GSE126448, GSE43177, GSE46922, and GSE196676. Analysis code, fixed signature definitions, processed subject-level changes, benchmark replicate results, and figure source data are publicly available at https://github.com/Salvation-Zhang/TISTA_Blood_Advances_reproducibility, version v1.0.0. The permanent Zenodo DOI will be added after archival of the GitHub release.
+All source datasets are publicly available through the Gene Expression Omnibus under accessions GSE112278, GSE302674, GSE262073, GSE186294, GSE112594, GSE107011, GSE126448, GSE43177, GSE46922, and GSE196676. Analysis code, fixed signature definitions, processed subject-level changes, benchmark replicate results, and figure source data are publicly available at https://github.com/Salvation-Zhang/TISTA_Blood_Advances_reproducibility, version v1.0.0, and are permanently archived at Zenodo (doi:10.5281/zenodo.21557318).
 
 ## Research ethics
 
