@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this code or processed dataset, please cite the associated article and this software release."
+title: "Therapy-driven lineage shifts can dominate whole-blood treatment transcriptomes: reproducibility release"
+version: 1.0.0
+date-released: 2026-07-25
+type: software
+authors:
+  - family-names: Zhang
+    given-names: Ye
+  - family-names: Peng
+    given-names: Jun
+repository-code: "TO_BE_ADDED_AFTER_PUBLICATION"
+license: MIT

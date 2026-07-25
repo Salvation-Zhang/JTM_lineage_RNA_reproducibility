@@ -1,0 +1,16 @@
+signature	gene
+B_cell	CD19
+B_cell	MS4A1
+B_cell	CD79A
+B_cell	CD79B
+B_cell	CD22
+B_cell	CD37
+B_cell	CD74
+B_cell	HLA-DRA
+B_cell	BANK1
+B_cell	BLK
+B_cell	FCRL1
+B_cell	FCRL2
+B_cell	CD180
+B_cell	TNFRSF13C
+B_cell	HVCN1

@@ -1,0 +1,7 @@
+score	contrast	group	n_complete	mean_change	exact_test_p
+platelet_abundance	1mon_minus_pre	responder	9	0.4962649270779564	0.0078125
+platelet_abundance	1mon_minus_pre	nonresponder	5	0.002303550662350057	1.0
+platelet_abundance	1mon_minus_pre	between_group	14	0.49396137641560633	0.17224163754368446
+platelet_abundance	1mon_minus_1wk	responder	8	-0.19204257026686083	0.0859375
+platelet_abundance	1mon_minus_1wk	nonresponder	4	0.3585884525122851	0.375
+platelet_abundance	1mon_minus_1wk	between_group	12	-0.550631022779146	0.05443548387096774

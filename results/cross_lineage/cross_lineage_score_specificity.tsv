@@ -1,0 +1,7 @@
+dataset	contrast	score	mean_change	permutation_p
+GSE186294	Base2_to_EPO4	erythroid	1.1868688665544438	0.001953125
+GSE186294	Base2_to_EPO4	T_cell	-1.29879688311257	0.001953125
+GSE186294	Base2_to_EPO4	neutrophil	0.10895829553489281	0.55859375
+GSE112594	active_minus_placebo_change	B_cell	-1.9119763947143742	9.99990000099999e-06
+GSE112594	active_minus_placebo_change	T_cell	0.80869904119321	0.011929880701192988
+GSE112594	active_minus_placebo_change	neutrophil	-0.4196147590863312	0.14558854411455885
