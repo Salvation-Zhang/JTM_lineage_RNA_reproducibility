@@ -1,5 +1,5 @@
 from pathlib import Path
-import glob, itertools, re
+import glob, itertools, re, os
 import numpy as np
 import pandas as pd
 try:
@@ -8,7 +8,10 @@ try:
 except ModuleNotFoundError:
     HAS_MPL=False
 
-ROOT=Path(r"D:\TISTA_JTH_manuscript"); PRIMARY=ROOT/"primary_raw"; EXT=ROOT/"young_platelet_analysis"/"GSE126448"; OUT=ROOT/"upgrade_analysis"/"results"
+REPO=Path(__file__).resolve().parents[1]
+PRIMARY=Path(os.environ.get("TISTA_PRIMARY_RAW", REPO/"data"/"primary_raw"))
+EXT=Path(os.environ.get("TISTA_GSE126448_DATA", REPO/"data"/"GSE126448"))
+OUT=REPO/"results"/"primary"
 OUT.mkdir(parents=True,exist_ok=True); RNG=np.random.default_rng(20260724)
 PLATELET=["PPBP","PF4","GP1BA","GP9","ITGA2B","ITGB3","TUBB1","TREML1","RGS18","SDPR","SPARC","CLU"]
 

@@ -4,9 +4,9 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import landscape, A4
 from reportlab.lib.colors import HexColor, black, white
 
-ROOT=Path(r"D:\TISTA_JTH_manuscript\upgrade_analysis")
-RES=ROOT/"results"; OUT=ROOT/"output"/"pdf"; OUT.mkdir(parents=True,exist_ok=True)
-PDF=ROOT.parent/"figures"/"Figure_5_composition_dominance.pdf"
+ROOT=Path(__file__).resolve().parents[1]
+RES=ROOT/"results"/"primary"; OUT=ROOT/"figures"; OUT.mkdir(parents=True,exist_ok=True)
+PDF=OUT/"Figure_5_composition_dominance.pdf"
 PDF.parent.mkdir(parents=True,exist_ok=True)
 
 def read_tsv(name):

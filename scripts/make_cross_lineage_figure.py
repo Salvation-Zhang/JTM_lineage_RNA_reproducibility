@@ -5,9 +5,9 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.colors import HexColor, black, white
 from reportlab.lib.pagesizes import landscape, A4
 
-ROOT=Path(r"D:\TISTA_JTH_manuscript\cross_lineage_validation")
-OUT=Path(r"D:\TISTA_JTH_manuscript\output\pdf"); OUT.mkdir(parents=True,exist_ok=True)
-R=ROOT/"results"
+REPO=Path(__file__).resolve().parents[1]
+OUT=REPO/"figures"; OUT.mkdir(parents=True,exist_ok=True)
+R=REPO/"results"/"cross_lineage"
 summ=pd.read_csv(R/"cross_lineage_composition_dominance_summary.tsv",sep="\t")
 mix=pd.read_csv(R/"B_cell_composition_mixing_benchmark_replicates.tsv",sep="\t")
 W,H=landscape(A4); c=canvas.Canvas(str(OUT/"Figure_5_cross_lineage_composition_benchmark.pdf"),pagesize=(W,H))

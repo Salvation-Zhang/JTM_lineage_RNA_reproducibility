@@ -3,7 +3,8 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import landscape, A4
 from reportlab.lib.colors import HexColor, white
 
-OUT=Path(r"D:\TISTA_JTH_manuscript\output\pdf"); OUT.mkdir(parents=True,exist_ok=True)
+REPO=Path(__file__).resolve().parents[1]
+OUT=REPO/"figures"; OUT.mkdir(parents=True,exist_ok=True)
 PDF=OUT/"Figure_1_study_design_Blood_Advances.pdf"
 W,H=landscape(A4); c=canvas.Canvas(str(PDF),pagesize=(W,H))
 navy=HexColor("#183B56"); blue=HexColor("#2D7DD2"); green=HexColor("#2E8B57"); red=HexColor("#C94C4C"); gold=HexColor("#E6A23C"); gray=HexColor("#667085"); pale=HexColor("#F4F7FA")

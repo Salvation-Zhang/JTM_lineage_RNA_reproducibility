@@ -1,14 +1,14 @@
 from pathlib import Path
-import gzip, glob, itertools, re
+import gzip, glob, itertools, re, os
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy import stats
 
-ROOT=Path(r"D:\TISTA_JTH_manuscript")
-EXT=ROOT/"young_platelet_analysis"/"GSE126448"
-PRIMARY=ROOT/"primary_raw"
-OUT=ROOT/"young_platelet_analysis"/"results"
+REPO=Path(__file__).resolve().parents[1]
+EXT=Path(os.environ.get("TISTA_GSE126448_DATA", REPO/"data"/"GSE126448"))
+PRIMARY=Path(os.environ.get("TISTA_PRIMARY_RAW", REPO/"data"/"primary_raw"))
+OUT=REPO/"results"/"young_platelet"
 OUT.mkdir(parents=True,exist_ok=True)
 
 PLATELET=["PPBP","PF4","GP1BA","GP9","ITGA2B","ITGB3","TUBB1","TREML1","RGS18","SDPR","SPARC","CLU"]

@@ -1,10 +1,13 @@
 from pathlib import Path
+import os
 import gzip
 import math
 import numpy as np
 import pandas as pd
 
-ROOT=Path(r"D:\TISTA_JTH_manuscript\cross_lineage_validation"); OUT=ROOT/"results"; OUT.mkdir(exist_ok=True)
+REPO=Path(__file__).resolve().parents[1]
+ROOT=Path(os.environ.get("TISTA_CROSS_LINEAGE_DATA", REPO/"data"/"cross_lineage"))
+OUT=REPO/"results"/"cross_lineage"; OUT.mkdir(parents=True,exist_ok=True)
 RNG=np.random.default_rng(20260724)
 RNG_NULL=np.random.default_rng(20260725)
 BMARK=["CD19","MS4A1","CD79A","CD79B","CD22","CD37","CD74","HLA-DRA","BANK1","BLK","FCRL1","FCRL2","CD180","TNFRSF13C","HVCN1"]

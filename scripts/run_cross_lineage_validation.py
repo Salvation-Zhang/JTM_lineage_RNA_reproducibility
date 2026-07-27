@@ -1,10 +1,11 @@
 from pathlib import Path
-import gzip,re,itertools,math
+import gzip,re,itertools,math,os
 import numpy as np
 import pandas as pd
 
-ROOT=Path(r"D:\TISTA_JTH_manuscript\cross_lineage_validation")
-OUT=ROOT/"results"; OUT.mkdir(exist_ok=True)
+REPO=Path(__file__).resolve().parents[1]
+ROOT=Path(os.environ.get("TISTA_CROSS_LINEAGE_DATA", REPO/"data"/"cross_lineage"))
+OUT=REPO/"results"/"cross_lineage"; OUT.mkdir(parents=True,exist_ok=True)
 RNG=np.random.default_rng(20260724)
 
 ERYTHROID=["ALAS2","AHSP","HBB","HBA1","HBA2","CA1","GYPA","SLC4A1","EPB42","BPGM","FECH","KLF1","ANK1","TMOD1","HEMGN"]

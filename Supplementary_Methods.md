@@ -2,7 +2,7 @@
 
 ## Reproducibility and software
 
-All analyses were run with Python 3 and the scripts in the public repository at https://github.com/Salvation-Zhang/TISTA_Blood_Advances_reproducibility (version v1.0.0; Zenodo doi:10.5281/zenodo.21557318). Random procedures used fixed seeds recorded in the scripts. Source expression matrices and gene-annotation files were not redistributed in this release when they were downloaded directly from GEO or NCBI; accession numbers and retrieval metadata are listed in `README_reproducibility.md`.
+The original analysis release was run in the environment pinned in `requirements.txt`. The primary-cohort deepening analyses were run with Python 3.13.14, NumPy 2.4.6, pandas 3.0.3, SciPy 1.18.0, statsmodels 0.14.6, and Matplotlib 3.11.1; this environment is recorded separately in `environment_primary_deepening.txt`. Scripts are available at https://github.com/Salvation-Zhang/TISTA_Blood_Advances_reproducibility, version v1.1.0, and archived in Zenodo under the concept DOI 10.5281/zenodo.21557317. Random procedures used fixed seeds recorded in the scripts. Source expression matrices and gene-annotation files were not redistributed when downloaded directly from GEO or NCBI; accession numbers and retrieval metadata are listed in `README_reproducibility.md`.
 
 ## Primary cohort preprocessing
 
@@ -29,3 +29,11 @@ For each of four donors in GSE107011, the mean purified B-cell profile was mixed
 ## Exploratory analyses
 
 Month-1 analyses were complete-case only. Young-platelet signatures were derived independently in paired purified platelet samples and residualized against the fixed platelet RNA score. Immunometabolic analyses were secondary, non-replicative audits and are not evidence of longitudinal eltrombopag mechanism.
+
+## Recent-IVIG exclusion and selection-independent analysis
+
+The paired primary-cohort analysis was repeated after exclusion of R7, R10, and R11, the three responders reported to have received intravenous immunoglobulin 4–8 days before pretreatment RNA collection. Effect direction and magnitude were emphasized because the exclusion analysis retained eight responders and four nonresponders. A separate selection-independent analysis used every gene with mean log2 counts per million of at least 1 and nonzero variation in paired baseline-to-week-1 change. Locked platelet-score genes were excluded. Incremental multivariate partial R2 was estimated across the complete patient-by-gene change matrix without selecting genes on the responder contrast. Because pooled residual sums of squares weight genes according to their change variance, the model was repeated after dividing each gene's paired-change vector by its sample standard deviation.
+
+## Rank-based composition sensitivity
+
+Centered single-sample rank-based marker-abundance scores were calculated as twice the mean within-sample percentile rank of detected markers minus 1. Scores were calculated for platelets, erythroid cells, neutrophils, monocytes, T cells, and B cells. The rank-based platelet score used the same locked markers as the primary z-score and therefore represented an alternative score construction rather than an independent biological signature. Genome-wide models included response group and standardized paired changes in the five nonplatelet scores before addition of standardized rank-based platelet-score change. The condition number of the full design matrix was recorded. These scores were treated as transcriptomic marker-abundance proxies rather than calibrated cell fractions.

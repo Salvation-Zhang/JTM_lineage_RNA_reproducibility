@@ -1,11 +1,13 @@
 from pathlib import Path
+import os
 import itertools
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-DATA = Path(r"F:\TISTA_data\data\processed")
-OUT = Path(r"D:\TISTA_JTH_manuscript\additional_materials")
+REPO = Path(__file__).resolve().parents[1]
+DATA = Path(os.environ.get("TISTA_PROCESSED_DATA", REPO / "data" / "processed"))
+OUT = REPO / "results" / "primary"
 OUT.mkdir(parents=True, exist_ok=True)
 
 MARKERS = ["PPBP","PF4","GP1BA","GP9","ITGA2B","ITGB3","TUBB1","TREML1","RGS18","SDPR","SPARC","CLU"]

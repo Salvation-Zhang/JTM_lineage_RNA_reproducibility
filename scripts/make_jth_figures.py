@@ -1,12 +1,14 @@
 from pathlib import Path
+import os
 import json
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 
-DATA = Path(r"F:\TISTA_data\data\processed")
-OUT = Path(r"D:\TISTA_JTH_manuscript\figures")
+REPO = Path(__file__).resolve().parents[1]
+DATA = Path(os.environ.get("TISTA_PROCESSED_DATA", REPO / "data" / "processed"))
+OUT = REPO / "figures"
 OUT.mkdir(parents=True, exist_ok=True)
 
 plt.rcParams.update({

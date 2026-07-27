@@ -2,15 +2,15 @@
 
 This directory contains the manuscript, supplementary methods/results, source-data tables, figure PDFs, and scripts for:
 
-**Therapy-driven lineage shifts can dominate whole-blood treatment transcriptomes**
+**Therapy-driven lineage shifts can shape apparent whole-blood treatment signatures**
 
 ## Reproduce
 
-1. Install the packages listed in `reproducibility/requirements.txt`.
-2. Place the GEO matrices and NCBI human gene annotation listed below in `reproducibility/data/`.
-3. Run `run_cross_lineage_validation.py`.
-4. Run `run_mixing_benchmark.py`.
-5. Run the figure-generation scripts.
+1. Install the packages listed in `requirements.txt`. The added primary-deepening analyses used the exact versions in `environment_primary_deepening.txt`.
+2. Place the source files under `data/` using the structure documented in `SOURCE_DATA_INDEX.md`, or set `TISTA_PRIMARY_RAW`, `TISTA_GSE126448_DATA`, `TISTA_CROSS_LINEAGE_DATA`, and `TISTA_PROCESSED_DATA` to the corresponding source-data directories.
+3. Run `python scripts/run_cross_lineage_validation.py` and `python scripts/run_mixing_benchmark.py`.
+4. Run `python scripts/run_depth_upgrade.py`, `python scripts/run_young_platelet_wave.py`, and `python scripts/run_primary_deepening_analyses.py`.
+5. Run the figure-generation scripts as required.
 
 The scripts use fixed random seeds. The benchmark includes donor fixed effects and a donor-stratified null-label calibration.
 
@@ -20,7 +20,7 @@ GSE112278, GSE302674, GSE262073, GSE186294, GSE112594, GSE107011, GSE126448, GSE
 
 ## Release status
 
-The public code repository is https://github.com/Salvation-Zhang/TISTA_Blood_Advances_reproducibility, release version `v1.0.0`. The version-fixed archive DOI is https://doi.org/10.5281/zenodo.21557318; the concept DOI for all versions is https://doi.org/10.5281/zenodo.21557317.
+The public code repository is https://github.com/Salvation-Zhang/TISTA_Blood_Advances_reproducibility. This directory prepares release `v1.1.0`. The concept DOI for all versions is https://doi.org/10.5281/zenodo.21557317. The version-specific DOI will be added to the submission files after Zenodo archives the GitHub release.
 
 ## Scope
 
