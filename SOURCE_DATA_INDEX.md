@@ -35,8 +35,8 @@ Equivalent external directories can be supplied with `TISTA_PRIMARY_RAW`, `TISTA
 
 ## Cross-lineage validation and computational benchmark
 
-- `results/cross_lineage/GSE112594_subject_changes.tsv`: subject-level erythropoietin cohort changes.
-- `results/cross_lineage/GSE186294_subject_changes.tsv`: subject-level rituximab cohort changes.
+- `results/cross_lineage/GSE186294_subject_changes.tsv`: subject-level erythropoietin cohort changes.
+- `results/cross_lineage/GSE112594_subject_changes.tsv`: subject-level rituximab/placebo cohort changes.
 - `results/cross_lineage/cross_lineage_composition_dominance_summary.tsv`: cross-lineage results.
 - `results/cross_lineage/cross_lineage_score_specificity.tsv`: lineage specificity.
 - `results/cross_lineage/B_cell_composition_mixing_benchmark_replicates.tsv`: all 100 benchmark replicates, including donor-stratified null-label counts.

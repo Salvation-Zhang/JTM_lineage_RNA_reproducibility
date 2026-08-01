@@ -64,7 +64,8 @@ for i in range(len(response)):
     pred1[i]=x1te@np.linalg.lstsq(x1tr,Y[tr],rcond=None)[0]
 cv_sse0=np.sum((Y-pred0)**2); cv_sse1=np.sum((Y-pred1)**2); cv_incremental_r2=1-cv_sse1/cv_sse0
 
-# Fully nested LOPO: reselect responder-induced genes within each training fold.
+    # Fold-wise LOPO: reselect responder-induced genes within each training fold;
+    # marker standardization uses full-cohort parameters and is not fully nested.
 nested_sse0=0.0; nested_sse1=0.0; nested_gene_n=[]
 for i,held in enumerate(patient_order):
     train_pat=[p for p in patient_order if p!=held]; train_resp=[p for p in train_pat if response[patient_order.index(p)]=="responder"]

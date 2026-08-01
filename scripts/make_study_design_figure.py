@@ -5,7 +5,7 @@ from reportlab.lib.colors import HexColor, white
 
 REPO=Path(__file__).resolve().parents[1]
 OUT=REPO/"figures"; OUT.mkdir(parents=True,exist_ok=True)
-PDF=OUT/"Figure_1_study_design_Blood_Advances.pdf"
+PDF=OUT/"Figure_1_study_design_JTM.pdf"
 W,H=landscape(A4); c=canvas.Canvas(str(PDF),pagesize=(W,H))
 navy=HexColor("#183B56"); blue=HexColor("#2D7DD2"); green=HexColor("#2E8B57"); red=HexColor("#C94C4C"); gold=HexColor("#E6A23C"); gray=HexColor("#667085"); pale=HexColor("#F4F7FA")
 
@@ -31,7 +31,7 @@ box(45,H-395,185,78,"External validation",["GSE186294: EPO / erythroid recovery"
 box(45,H-515,185,78,"Known-truth benchmark",["GSE107011 purified immune profiles","donor-matched composition-only mixtures","100 replicates + null-label calibration"],gold)
 
 # Central analysis
-box(315,H-205,210,105,"Primary platelet composition audit",["paired score change and exact tests","top-gene coupling + matched sets","effect attenuation + conditional partial R2","fully nested held-out reconstruction"],blue)
+box(315,H-205,210,105,"Primary platelet composition audit",["paired score change and exact tests","top-gene coupling + matched sets","effect attenuation + conditional partial R2","partially nested held-out reconstruction"],blue)
 box(315,H-365,210,105,"Transport across lineages",["target-lineage score direction","overlap-free partial R2","matched-set comparison","nested held-out reconstruction"],red)
 box(315,H-500,210,80,"Composition-only falsification test",["donor-adjusted DE before vs after score","model condition number","donor-stratified null labels"],gold)
 

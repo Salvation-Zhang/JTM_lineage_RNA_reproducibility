@@ -1,5 +1,7 @@
 # Version 1.1.0
 
+> Historical release note. This version has been superseded by v1.2.0 and is retained for provenance.
+
 This release adds the primary-cohort deepening analyses requested during final manuscript audit:
 
 - exclusion sensitivity for responders R7, R10, and R11 with recent IVIG exposure;

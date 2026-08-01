@@ -75,7 +75,7 @@ elog=logcpm(epo); escore,eg=score(elog,ERYTHROID); eneg_t,_=score(elog,T_CELL); 
 ew=em[em.visit.isin(["Base2","EPO4"])].pivot(index="subject",columns="visit",values="column").dropna(); epat=ew.index.tolist(); edelta=pd.DataFrame({p:elog[ew.loc[p,"EPO4"]]-elog[ew.loc[p,"Base2"]] for p in epat}); esd=np.array([escore[ew.loc[p,"EPO4"]]-escore[ew.loc[p,"Base2"]] for p in epat])
 etop=edelta.mean(axis=1).nlargest(200).index; egenes=[g for g in etop if g not in eg]; EY=edelta.loc[egenes].T.values; eX0=np.ones((len(epat),1)); eX1=np.column_stack([np.ones(len(epat)),esd]); epr2,es0,es1=partial_r2(EY,eX0,eX1); emc,_=medcorr(EY,esd); eperm,enull=matched_permutation(edelta,egenes,emc,esd)
 
-# Fully nested EPO LOPO.
+    # Fold-wise EPO LOPO; marker standardization uses full-cohort parameters.
 ecv0=ecv1=0
 for i,p in enumerate(epat):
     tr=[q for q in epat if q!=p]; top=edelta[tr].mean(1).nlargest(200).index; genes=[g for g in top if g not in eg]; ytr=edelta.loc[genes,tr].T.values; yte=edelta.loc[genes,p].values; x=np.array([esd[epat.index(q)] for q in tr]); x0=np.ones((len(tr),1)); x1=np.column_stack([np.ones(len(tr)),x]); p0=(np.ones((1,1))@np.linalg.lstsq(x0,ytr,rcond=None)[0]).ravel(); p1=(np.array([[1,esd[i]]])@np.linalg.lstsq(x1,ytr,rcond=None)[0]).ravel(); ecv0+=np.sum((yte-p0)**2); ecv1+=np.sum((yte-p1)**2)
@@ -86,7 +86,7 @@ bc=pd.read_csv(ROOT/"GSE112594_counts.txt.gz",sep="\t",index_col=0,compression="
 bw=bm[bm.visit.isin(["Baseline","Wk 26"])].pivot(index=["subject id","treatment"],columns="visit",values="column").dropna(); bpat=[x[0] for x in bw.index]; bgroup=np.array([x[1] for x in bw.index]); bdelta=pd.DataFrame({x[0]:blog[bw.loc[x,"Wk 26"]]-blog[bw.loc[x,"Baseline"]] for x in bw.index}); bsd=np.array([bscore[bw.loc[x,"Wk 26"]]-bscore[bw.loc[x,"Baseline"]] for x in bw.index])
 active=[bpat[i] for i in range(len(bpat)) if bgroup[i]=="Active"]; placebo=[bpat[i] for i in range(len(bpat)) if bgroup[i]=="Placebo"]; effect=bdelta[active].mean(axis=1)-bdelta[placebo].mean(axis=1); btop=effect.nsmallest(200).index; bgenes=[g for g in btop if g not in bg]; BY=bdelta.loc[bgenes,bpat].T.values; treat=(bgroup=="Active").astype(float); bX0=np.column_stack([np.ones(len(bpat)),treat]); bX1=np.column_stack([bX0,bsd]); bpr2,bs0,bs1=partial_r2(BY,bX0,bX1); bmc,_=medcorr(BY,bsd); bperm,bnull=matched_permutation(bdelta,bgenes,bmc,bsd)
 
-# Fully nested rituximab LOPO.
+    # Fold-wise rituximab LOPO; marker standardization uses full-cohort parameters.
 bcv0=bcv1=0
 for i,p in enumerate(bpat):
     tr=np.arange(len(bpat))!=i; tp=[bpat[k] for k in np.where(tr)[0] if bgroup[k]=="Active"]; cp=[bpat[k] for k in np.where(tr)[0] if bgroup[k]=="Placebo"]; top=(bdelta[tp].mean(1)-bdelta[cp].mean(1)).nsmallest(200).index; genes=[g for g in top if g not in bg]; ytr=bdelta.loc[genes,[bpat[k] for k in np.where(tr)[0]]].T.values; yte=bdelta.loc[genes,p].values; x0=np.column_stack([np.ones(tr.sum()),treat[tr]]); x1=np.column_stack([x0,bsd[tr]]); p0=(np.array([[1,treat[i]]])@np.linalg.lstsq(x0,ytr,rcond=None)[0]).ravel(); p1=(np.array([[1,treat[i],bsd[i]]])@np.linalg.lstsq(x1,ytr,rcond=None)[0]).ravel(); bcv0+=np.sum((yte-p0)**2); bcv1+=np.sum((yte-p1)**2)
