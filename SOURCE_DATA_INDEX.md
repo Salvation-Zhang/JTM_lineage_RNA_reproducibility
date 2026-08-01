@@ -13,6 +13,8 @@ Equivalent external directories can be supplied with `TISTA_PRIMARY_RAW`, `TISTA
 
 ## Primary ITP analyses
 
+- `results/primary/specificity_model_results.tsv`: patient-fixed-effect platelet RNA-score specificity models, with classical OLS and patient-clustered CR1 inference and design condition numbers.
+- `results/primary/specificity_model_sample_scores.tsv`: all 46 sample-level platelet, erythroid, neutrophil, monocyte, T-cell, and B-cell RNA scores used by the specificity models.
 - `results/primary/complete_case_month1.tsv`: complete-case month-1 sensitivity results.
 - `results/primary/composition_variance_attribution.tsv`: conditional variance attribution.
 - `results/primary/patient_bootstrap_and_variance_attribution.tsv`: patient bootstrap and held-out reconstruction summary.

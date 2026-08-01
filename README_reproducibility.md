@@ -11,10 +11,12 @@ The manuscript is intended for submission to the *Journal of Translational Medic
 1. Install the packages listed in `requirements.txt`. The primary-cohort extension analyses used the exact versions recorded in `environment_primary_deepening.txt`.
 2. Place the source files under `data/` using the structure documented in `SOURCE_DATA_INDEX.md`, or set `TISTA_PRIMARY_RAW`, `TISTA_GSE126448_DATA`, `TISTA_CROSS_LINEAGE_DATA`, and `TISTA_PROCESSED_DATA` to the corresponding source-data directories.
 3. Run `python scripts/run_cross_lineage_validation.py` and `python scripts/run_mixing_benchmark.py`.
-4. Run `python scripts/run_depth_upgrade.py`, `python scripts/run_young_platelet_wave.py`, and `python scripts/run_primary_deepening_analyses.py`.
+4. Run `python scripts/run_specificity_model.py`, `python scripts/run_depth_upgrade.py`, `python scripts/run_young_platelet_wave.py`, and `python scripts/run_primary_deepening_analyses.py`.
 5. Run the figure-generation scripts as required.
 
 Randomized procedures use fixed seeds specified in the corresponding scripts. The composition-only benchmark includes donor fixed effects and donor-stratified null-label calibration.
+
+The specificity model is run directly from the 46 GSE112278 per-sample count files. It writes the complete sample-level score table and both the classical OLS and patient-clustered CR1 estimates. The exact runtime, input path, official download URL, archive SHA-256, model definitions, and output paths are recorded in `environment_specificity_model.txt`.
 
 ## Public data accessions
 

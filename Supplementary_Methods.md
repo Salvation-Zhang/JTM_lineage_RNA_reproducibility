@@ -22,6 +22,10 @@ The responder-associated set consisted of the 208 genes with the largest mean we
 
 Erythroid and B-cell signatures were fixed from canonical markers without selecting genes on validation treatment effects. The same overlap-free partial R² and held-out reconstruction logic was applied to GSE186294 and GSE112594. These cohorts support transport of the framework to other treatment-lineage settings but are not clinical replications of the primary eltrombopag finding. Opposite changes in non-target scores were interpreted as closed-sum compositional substitution rather than universal negative-control failure.
 
+## Platelet RNA-score specificity model
+
+The platelet RNA score was modeled across all 46 primary-cohort samples using patient fixed effects, week-1 and month-1 indicators, and responder-by-time interactions. The adjusted model additionally included standardized log library size and standardized erythroid, neutrophil, monocyte, T-cell, and B-cell RNA scores. Classical ordinary-least-squares inference and a sensitivity analysis using patient-clustered CR1 covariance with finite-sample correction were reported. Clustered tests used a t reference with 16 degrees of freedom, corresponding to 17 patient clusters. Condition numbers were calculated directly from each fitted design matrix. The executable analysis, complete sample-level input score table, numerical output, runtime versions, input path, official GEO URL, and source-archive SHA-256 are provided in `scripts/run_specificity_model.py`, `results/primary/specificity_model_sample_scores.tsv`, `results/primary/specificity_model_results.tsv`, and `environment_specificity_model.txt`.
+
 ## Composition-only benchmark
 
 For each of four donors in GSE107011, the mean purified B-cell profile was mixed with the donor-matched mean non-B immune-cell profile. B-cell fractions were sampled from overlapping intervals (3%–14% and 8%–19%), with 12 samples per group per donor, variable library size, and multinomial sampling. Donor fixed effects were included in both group models. A donor-stratified null-label calibration independently permuted group labels within donor in every replicate.
