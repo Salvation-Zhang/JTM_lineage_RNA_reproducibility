@@ -1,18 +1,21 @@
 cff-version: 1.2.0
-message: "If you use this code or processed dataset, please cite the associated article and this software release."
-title: "Therapy-driven lineage shifts can shape apparent whole-blood treatment signatures: reproducibility release"
-version: 1.1.0
-date-released: 2026-07-27
+message: "If you use this code or processed dataset, please cite this software release and the associated manuscript."
+title: "Therapy-associated shifts in lineage-derived RNA can shape apparent whole-blood treatment signatures: reproducibility release"
+version: 1.2.0
+date-released: 2026-07-31
 type: software
 authors:
   - family-names: Zhang
     given-names: Ye
   - family-names: Peng
     given-names: Jun
-repository-code: "https://github.com/Salvation-Zhang/TISTA_Blood_Advances_reproducibility"
-doi: "10.5281/zenodo.21557317"
+repository-code: "https://github.com/Salvation-Zhang/JTM_lineage_RNA_reproducibility"
+doi: "10.5281/zenodo.21722268"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.21557317"
+    value: "10.5281/zenodo.21722268"
+    description: "Version-specific DOI for release v1.2.0"
+  - type: doi
+    value: "10.5281/zenodo.21632172"
     description: "Concept DOI for all software versions"
 license: MIT
